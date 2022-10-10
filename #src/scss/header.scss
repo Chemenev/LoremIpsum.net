@@ -1,0 +1,129 @@
+.header {
+  background: rgba(16, 16, 29, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  // .header__inner
+
+  &__inner {
+    @extend %flexible;
+    justify-content: space-between;
+    padding: vh(33) 0 vh(31);
+    transition: padding $transitionTime;
+  }
+
+  // .header__logo
+
+  &__logo {
+    font-family: 'Raleway', sans-serif;
+    font-size: rem(28);
+    line-height: 33px;
+    text-transform: uppercase;
+    color: $white-color;
+    @include media('max', 'md1') {
+      font-size: rem(20);
+    }
+    & > span {
+      color: $corporateBlue;
+    }
+  }
+
+  // .header__nav
+
+  &__nav {
+    @extend %flexible;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: vw(60);
+    margin-left: vw(20);
+    @include media('max', 'md4') {
+      display: none;
+    }
+
+    &--visible {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 100%;
+      background: rgba(16, 16, 29, 0.9);
+      padding: 20px;
+
+      .header__nav-item {
+        font-size: rem(20);
+        line-height: 180%;
+      }
+    }
+  }
+
+  // .header__nav-item
+
+  &__nav-item {
+    font-size: rem(13);
+    line-height: $mainLineHeight;
+    text-transform: uppercase;
+    color: $white-color;
+    transition: color $transitionTime;
+
+    &:hover {
+      color: $corporateBlue;
+      opacity: 0.5;
+    }
+
+    &.active {
+      color: $corporateBlue;
+    }
+  }
+}
+
+.burger {
+  @include media('min', 'md4') {
+    display: none;
+  }
+  @extend %flexible;
+  position: relative;
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  background: initial;
+  border: none;
+
+  & > span::before {
+    content: '';
+    top: -10px;
+  }
+
+  & > span::after {
+    content: '';
+    top: 10px;
+  }
+
+  & > span,
+  & > span::before,
+  & > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: $white-color;
+    transition: $transitionTime;
+  }
+  &--active {
+    & > span {
+      transform: rotate(45deg);
+    }
+
+    & > span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+
+    & > span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+  }
+}

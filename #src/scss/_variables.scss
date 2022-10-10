@@ -1,0 +1,22 @@
+$fullSize: 1920;
+$maxWidthContainer: 61.5%;
+$fontFamily: Lato;
+$mainLineHeight: 120%;
+$mainFontSize: 16;
+$transitionTime: 0.4s;
+
+$black-color: #000;
+$white-color: #fff;
+$white-color-opacity: rgba(255, 255, 255, 0.85);
+$dark-gray: #3d4050;
+$dark-gray-opacity: rgba(61, 64, 80, 0.85);
+$corporateBlue: #3e9cdc;
+$sizes: (
+  'md1': 320px,
+  'md2': 576px,
+  'md3': 768px,
+  'md4': 992px,
+  'md5': 1200px,
+  'md6': 1320px,
+  'md7': 1440px,
+);

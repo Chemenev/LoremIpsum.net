@@ -1,0 +1,87 @@
+@mixin font-face(
+  $name,
+  $path,
+  $weight: null,
+  $style: null,
+  $exts: eot woff2 woff ttf svg
+) {
+  $src: null;
+
+  $extmods: (
+    eot: '?',
+    svg: '#' + str-replace($name, ' ', '_'),
+  );
+
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype',
+  );
+
+  @each $ext in $exts {
+    $extmod: if(
+      map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext
+    );
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append(
+      $src,
+      url(quote($path + '.' + $extmod)) format(quote($format)),
+      comma
+    );
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-weight: $weight;
+    font-style: $style;
+
+    // font-display: block;
+    src: $src;
+  }
+}
+
+@mixin media($minmax, $media) {
+  @each $size, $resolution in $sizes {
+    @if $media==$size {
+      @media only screen and (#{$minmax}-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin from-to($from, $to) {
+  $min: map-get($sizes, $from);
+  $max: map-get($sizes, $to) - 1px;
+
+  @if ($min == 0) {
+    @media screen and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+@function vmax($pixels, $context: $fullSize) {
+  @return #{calc($pixels/$context) * 100}vmax;
+}
+
+@function vw($pixels, $context: $fullSize) {
+  @return #{calc($pixels/$context) * 100}vw;
+}
+
+@function vh($pixels, $context: $fullSize) {
+  @return #{(calc($pixels/$context) * 100) * 2}vh;
+}
+
+@function em($pixels, $context: $mainFontSize) {
+  @return #{calc($pixels/$context)}em;
+}
+
+@function rem($pixels, $context: $mainFontSize) {
+  @return #{calc($pixels/$context)}rem;
+}

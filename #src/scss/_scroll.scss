@@ -1,0 +1,33 @@
+.dropdown__list .simplebar-track.simplebar-vertical {
+  top: 3px;
+  width: 7px;
+  right: 3px;
+  border-radius: 3px;
+  height: calc(100% - 6px);
+
+  //.dropdown__list .simplebar-track.simplebar-vertical .simplebar-scrollbar:before
+
+  & .simplebar-scrollbar:before {
+    top: 0px;
+    bottom: 0px;
+  }
+}
+
+.simplebar-track {
+  background: #3d4050;
+
+  //.simplebar-track .simplebar-scrollbar:before
+
+  & .simplebar-scrollbar:before {
+    background: $corporateBlue;
+    left: 0px;
+    right: 0px;
+    opacity: 1;
+  }
+
+  //.simplebar-track .simplebar-scrollbar.simplebar-visible:before
+
+  & .simplebar-scrollbar.simplebar-visible:before {
+    opacity: 1;
+  }
+}

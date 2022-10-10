@@ -1,0 +1,80 @@
+@font-face {
+  font-family: Raleway;
+  src: url('../fonts/Raleway-ExtraBold.woff');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato-Regular.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato-Semibold.woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato-Bold.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato-Heavy.woff');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: icomoon;
+  src: url('../fonts/icomoon.woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow:before {
+  content: '\e906';
+}
+.icon-add-doc:before {
+  content: '\e900';
+}
+.icon-mail:before {
+  content: '\e901';
+}
+.icon-money:before {
+  content: '\e902';
+}
+.icon-procent:before {
+  content: '\e903';
+}
+.icon-search:before {
+  content: '\e905';
+}
+.icon-file:before {
+  content: '\e904';
+}
+.icon-qiwi:before {
+  content: '\e908';
+}
+.icon-vk:before {
+  content: '\e90a';
+}
+.icon-web-money:before {
+  content: '\e90b';
+}

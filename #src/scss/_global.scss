@@ -1,0 +1,121 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontFamily, sans-serif;
+  font-size: 1em;
+  line-height: $mainLineHeight;
+  font-weight: 400;
+}
+
+.container {
+  width: $maxWidthContainer;
+  max-width: 100%;
+  margin: 0 auto;
+
+  @include media('max', 'md7') {
+    width: 77%;
+  }
+  @include media('max', 'md6') {
+    width: 88%;
+  }
+  @include media('max', 'md3') {
+    width: 95%;
+  }
+  @include media('max', 'md2') {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: vh(30) 0;
+  & > span {
+    color: $corporateBlue;
+  }
+
+  &--h1 {
+    font-size: rem(48);
+    line-height: 120%;
+    @include media('max', 'md2') {
+      font-size: rem(34);
+    }
+  }
+  &--h2 {
+    font-size: rem(36);
+    line-height: 120%;
+    @include media('max', 'md2') {
+      font-size: rem(26);
+    }
+  }
+  &--light {
+    color: $white-color;
+  }
+}
+
+.btn {
+  display: inline-block;
+  min-width: vh(183);
+  text-align: center;
+  border: 1px solid $white-color;
+  border-radius: 4px;
+  background-color: $corporateBlue;
+  color: $white-color;
+  text-transform: uppercase;
+  font-size: rem(13);
+  line-height: 120%;
+  padding: vh(15) 0;
+  cursor: pointer;
+  transition: background-color $transitionTime, border-color $transitionTime,
+    color $transitionTime;
+  &:hover {
+    background-color: $white-color;
+    border-color: #6f6d7b;
+    color: #2a2b30;
+  }
+
+  &--light {
+    border-color: #6f6d7b;
+    background-color: $white-color;
+    color: #2a2b30;
+    &:hover {
+      background-color: $corporateBlue;
+      border-color: $white-color;
+      color: $white-color;
+    }
+  }
+}
+
+ul.custom-dots {
+  padding-left: 0;
+  & li {
+    position: relative;
+    padding-left: 25px;
+    margin: 5px 0;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 5px;
+      height: 1.5px;
+      background: #000;
+    }
+  }
+}
+
+.dark-bg {
+  background: #272733 url(../img/dark-bg.jpg) center;
+  color: $white-color;
+}
+
+.pt-120-0-150 {
+  padding: vh(120) 0 vh(150);
+}

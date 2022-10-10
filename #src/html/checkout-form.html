@@ -1,0 +1,68 @@
+<section class="checkout-form">
+	<form action="" class="form">
+		<div class="form__row form__row--col3">
+			<div class="dropdown">
+				<button class="dropdown__button" type="button">
+					Выберите тип системы
+				</button>
+				<ul class="dropdown__list" data-simplebar>
+					<li class="dropdown__list-item" data-value="Sed ut perspiciatis">
+						Sed ut perspiciatis
+					</li>
+					<li class="dropdown__list-item" data-value="Nemo enim ipsam">
+						Nemo enim ipsam
+					</li>
+					<li class="dropdown__list-item" data-value="Et harum quidem">
+						Et harum quidem
+					</li>
+					<li class="dropdown__list-item" data-value="Temporibus autem">
+						Temporibus autem
+					</li>
+					<li class="dropdown__list-item" data-value="Itaque earum rerum">
+						Itaque earum rerum
+					</li>
+					<li class="dropdown__list-item" data-value="Sed ut perspiciatis">
+						Sed ut perspiciatis
+					</li>
+					<li class="dropdown__list-item" data-value="Nemo enim ipsam">
+						Nemo enim ipsam
+					</li>
+					<li class="dropdown__list-item" data-value="Et harum quidem">
+						Et harum quidem
+					</li>
+					<li class="dropdown__list-item" data-value="Temporibus autem">
+						Temporibus autem
+					</li>
+					<li class="dropdown__list-item" data-value="Itaque earum rerum">
+						Itaque earum rerum
+					</li>
+				</ul>
+				<input class="dropdown__input-hidden" type="text" name="select-dropdown" />
+			</div>
+			<input class="form__input" type="email" name="email" placeholder="Ваш e-mail" />
+			<input class="form__input" type="text" name="name" placeholder="Ваше имя" />
+		</div>
+		<div class="form__row form__row--col2-1">
+			<div class="form__range-wrapper range-input">
+				<div class="range-input__description">
+					<p>Sed ut perspiciatis, unde omnis iste natus</p>
+					<div class="range-input__procent-value">
+						<output id="rangevalue">75</output>
+						<span>%</span>
+					</div>
+				</div>
+				<input class="range-input__input" type="range" name="range" value="75" min="0" max="100"
+					oninput="rangevalue.value=value" />
+			</div>
+			<div class="form__file-wrapper download-input">
+				<input class="download-input__input" type="file" name="file" id="input-file" />
+				<label class="download-input__button form__input" for="input-file">
+					<i class="icon icon-file"></i>Прикрепить файл
+				</label>
+			</div>
+		</div>
+		<div class="form__row form__row--footer">
+			<button class="btn" type="submit">Отправить</button>
+		</div>
+	</form>
+</section>
